@@ -1,0 +1,6 @@
+# Spec Version: IAB Tech Lab Ads.txt / App-ads.txt v1.1
+# Developer Domain: theshubhamgoel.github.io
+# Contact: theshubhamgoel@gmail.com
+
+# Google AdMob
+google.com, pub-4702990128775812, DIRECT, f08c47fec0942fa0

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Block Master: Classic Puzzel — Official Site</title>
+  <meta name="description" content="Master the grid! Play Block Master: Classic Puzzel. Challenge your brain, create satisfying block combos, and climb global leaderboards. Download now on iOS.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+  <!-- Sticky Header Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <svg class="nav-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="36" height="36" rx="6" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2.5" />
+          <rect x="54" y="10" width="36" height="36" rx="6" fill="#ec4899" stroke="#be185d" stroke-width="2.5" />
+          <rect x="10" y="54" width="36" height="36" rx="6" fill="#8b5cf6" stroke="#6d28d9" stroke-width="2.5" />
+          <rect x="54" y="54" width="36" height="36" rx="6" fill="#f59e0b" stroke="#b45309" stroke-width="2.5" />
+        </svg>
+        <span class="nav-logo-text">Block Master</span>
+      </a>
+      
+      <!-- Hamburger Menu Button -->
+      <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link" id="link-home">Home</a></li>
+          <li><a href="#updates" class="nav-link" id="link-updates">Updates</a></li>
+          <li><a href="#giftcodes" class="nav-link" id="link-giftcodes">Gift Codes</a></li>
+          <li><a href="#privacy" class="nav-link" id="link-privacy">Privacy</a></li>
+          <li>
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle theme">
+              <span class="theme-icon">🔮</span> <span class="theme-label">Neon Theme</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-wrapper">
+
+    <!-- 1. HOME VIEW -->
+    <div id="view-home" class="page-view">
+      <div class="hero-grid">
+        <div class="hero-info">
+          <h1>Master The Blocks</h1>
+          <p class="lead">Challenge your spatial logic, create explosive line combos, and blast your way to a new high score in the ultimate grid puzzle adventure!</p>
+          
+          <div class="cta-group">
+            <a href="https://apps.apple.com/us/app/block-master-classic-puzzle/id6778909840" target="_blank" rel="noopener" class="appstore-badge">
+              <svg class="appstore-icon" viewBox="0 0 170 170" xmlns="http://www.w3.org/2000/svg">
+                <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.34.13-9.14-1.87-14.38-6-3.43-2.61-7.34-7.29-11.75-14.04-5.63-8.62-10.16-18.9-13.6-30.82-3.43-11.92-5.15-23.23-5.15-33.93 0-16.59 3.86-29.83 11.58-39.73 7.72-9.9 17.51-14.88 29.37-14.99 5.35 0 10.95 1.52 16.79 4.57 5.84 3.05 10.4 4.57 13.7 4.57 3 0 7.39-1.48 13.16-4.43 5.77-2.95 11.01-4.43 15.72-4.43 11.06 0 20.31 4.45 27.75 13.37 5.25 6.3 9.07 14.16 11.46 23.59-10.59 4.34-17.77 11.02-21.54 20.04-3.77 9.02-3.95 18.52-.55 28.5 2.5 7.27 6.64 13.19 12.44 17.75 5.8 4.56 12.35 6.94 19.65 7.15.22 1 .37 2.11.45 3.32.08 1.21.08 2.39.01 3.56zM119.22 28.61c0-7.72 2.76-14.88 8.28-21.49 1.41-1.63 3.03-3.17 4.86-4.62 1-.81 1.76-.71 2.27.31 2.21 4.51 3.3 9.53 3.27 15.06-.03 7.5-2.82 14.54-8.38 21.12-1.43 1.7-3.09 3.27-4.99 4.72-.94.72-1.74.57-2.39-.45-2.02-3.16-2.94-8.72-2.92-14.65z"/>
+              </svg>
+              <span class="appstore-text">
+                <span class="appstore-sub">Download on the</span>
+                <span class="appstore-main">App Store</span>
+              </span>
+            </a>
+            <div class="rating-badge">
+              <span class="rating-stars">★★★★★</span>
+              <span class="rating-count">Rated 4.9+ • FREE TO PLAY</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Interactive Hero Grid Graphic -->
+        <div class="hero-visual">
+          <div class="hero-grid-backglow"></div>
+          <div class="hero-interactive-board" id="hero-gameboard" aria-label="Interactive Block Puzzle Grid">
+            <!-- 8x8 Grid generated programmatically via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Showcases -->
+      <h2 class="home-section-title">Game Highlights</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">🧩</div>
+          <h3>Satisfying Combos</h3>
+          <p>Blast multiple rows or columns simultaneously to rack up massive combo multipliers and trigger spectacular visual feedback.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">🧠</div>
+          <h3>Brain Training</h3>
+          <p>Keep your mind sharp with endless strategic grid-placements. Easy to learn, but challenging to master!</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">🏆</div>
+          <h3>Global Leaderboards</h3>
+          <p>Integrate with Apple Game Center, track your high scores, unlock rewarding achievements, and challenge friends.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">✈️</div>
+          <h3>Play Offline Anywhere</h3>
+          <p>No WiFi? No Cellular Connection? Play on the go! Enjoy a completely functional game mode without any data requirements.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">🌟</div>
+          <h3>Adventure Mode</h3>
+          <p>Explore beautiful progressive maps, play through themed stages with unique backgrounds, and win exclusive badges.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">☁️</div>
+          <h3>iCloud Sync Support</h3>
+          <p>Your records are secure. iCloud saves your high score, coin count, and unlocked aesthetic boards across all your iOS devices.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. UPDATES VIEW -->
+    <div id="view-updates" class="page-view">
+      <div class="dev-log-container">
+        
+        <!-- Entry 1 -->
+        <article class="update-entry">
+          <div class="update-header">
+            <div class="update-title-box">
+              <span class="update-version">v1.3.0 - Adventure Mode Update</span>
+              <span class="update-date">Released: June 2026</span>
+            </div>
+            <span class="update-status-badge status-active">Latest Version</span>
+          </div>
+          <p>Welcome to the Adventure Map release! Journey through challenging stages with progressive difficulty and collect special trophies.</p>
+          <h4>New Features & Additions:</h4>
+          <ul>
+            <li><strong>Adventure Map Stages:</strong> 120 custom puzzle levels are now available on the Adventure tab!</li>
+            <li><strong>Stage Badges:</strong> Win three stars on difficult levels to earn legendary badges and showcase them on your Game Center profile.</li>
+          </ul>
+          <h4>Optimizations:</h4>
+          <ul>
+            <li>Optimized block grid blast rendering algorithms, ensuring a constant 60 FPS on older devices.</li>
+            <li>Fixed a layout rendering glitch affecting iPads in landscape orientation.</li>
+          </ul>
+        </article>
+
+        <!-- Entry 2 -->
+        <article class="update-entry">
+          <div class="update-header">
+            <div class="update-title-box">
+              <span class="update-version">v1.2.0 - Neon Blast FX Upgrade</span>
+              <span class="update-date">Released: June 2026</span>
+            </div>
+            <span class="update-status-badge status-historical">Historical Build</span>
+          </div>
+          <p>This update adds advanced visual effects and particle animations to make block clears feel incredibly satisfying.</p>
+          <h4>Visual Enhancements:</h4>
+          <ul>
+            <li><strong>Neon Explosions:</strong> Clearing lines now triggers dynamic glow-particle explosions customized to the color of the cleared blocks.</li>
+            <li><strong>Sweep Line FX:</strong> A glowing grid-line sweep sweeps across completed rows and columns upon deletion.</li>
+          </ul>
+          <h4>Bug Fixes:</h4>
+          <ul>
+            <li>Fixed a rare startup crash that affected users loading cached games without active internet connections.</li>
+            <li>Balanced the block generator algorithm to minimize dead-ends on higher difficulty scores.</li>
+          </ul>
+        </article>
+
+        <!-- Entry 3 -->
+        <article class="update-entry">
+          <div class="update-header">
+            <div class="update-title-box">
+              <span class="update-version">v1.1.0 - Game Center & Cloud Sync</span>
+              <span class="update-date">Released: May 2026</span>
+            </div>
+            <span class="update-status-badge status-historical">Historical Build</span>
+          </div>
+          <p>Compete globally and synchronize your progress seamlessly across all of your Apple devices.</p>
+          <h4>Integrations:</h4>
+          <ul>
+            <li><strong>iCloud Progress:</strong> Integrates secure backups so you can transition gameplay between iPhone and iPad instantly.</li>
+            <li><strong>Leaderboards & Achievements:</strong> Compete on global scoreboards and unlock 20 challenging Game Center achievements.</li>
+          </ul>
+        </article>
+
+        <!-- Entry 4 -->
+        <article class="update-entry">
+          <div class="update-header">
+            <div class="update-title-box">
+              <span class="update-version">v1.0.0 - Grand Launch</span>
+              <span class="update-date">Released: April 2026</span>
+            </div>
+            <span class="update-status-badge status-historical">Historical Build</span>
+          </div>
+          <p>Block Master: Classic Puzzel is officially live on the iOS App Store! Download now and start matching.</p>
+          <h4>Launch Features:</h4>
+          <ul>
+            <li>Standard 8x8 block puzzle game board.</li>
+            <li>Local high-score tracking and statistic records.</li>
+            <li>Clean, minimalist flat color block theme.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- 3. GIFT CODE VIEW -->
+    <div id="view-giftcodes" class="page-view">
+      <div class="gift-code-layout">
+        
+        <!-- Redeemer Panel -->
+        <div class="gift-redeem-panel">
+          <h2>🎁 Claim Block Codes</h2>
+          <p style="color: var(--text-secondary); margin-top: 0.5rem;">Redeem promotional codes to unlock custom themes, starting score boosts, or multiplier bonuses.</p>
+          
+          <!-- Steps to Claim -->
+          <div class="claim-steps-container" style="text-align: left; margin: 1.5rem auto 0; max-width: 500px; padding: 1.25rem; background: rgba(0,0,0,0.15); border: 1px dashed var(--card-border); border-radius: 12px;">
+            <h4 style="font-family: var(--font-heading); color: var(--accent-theme); font-size: 0.95rem; text-transform: uppercase; margin-bottom: 0.75rem; letter-spacing: 0.05em;">How to redeem:</h4>
+            <ol style="margin-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem; line-height: 1.5;">
+              <li>Open the <strong>Block Master: Classic Puzzel</strong> app on your Apple device.</li>
+              <li>Tap the <strong>Settings</strong> icon (⚙️) on the top-right corner of the main dashboard.</li>
+              <li>Click on the <strong>Redeem Code</strong> button.</li>
+              <li>Type the promotional code exactly as shown and tap <strong>Verify</strong> to unlock your rewards!</li>
+            </ol>
+          </div>
+
+          <div class="claim-form">
+            <div class="input-group">
+              <input type="text" id="gift-code-input" class="code-input-field" placeholder="Enter block code..." aria-label="Promo code input">
+              <button class="btn-redeem" id="claim-btn">Redeem</button>
+            </div>
+            <div class="redeem-result-msg" id="claim-msg"></div>
+          </div>
+        </div>
+
+        <!-- Codes Table -->
+        <div class="active-codes-card">
+          <h3 style="font-family: var(--font-heading); margin-bottom: 1.5rem; text-transform: uppercase;">Active Promos</h3>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Promo Code</th>
+                  <th>Bonus Effect</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="code-badge">FREEBLASTS</span></td>
+                  <td>+1,000 Points Starter score boost</td>
+                  <td>
+                    <span class="status-indicator">
+                      <span class="indicator-dot active"></span> Active
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="code-badge">NEONBLOCKS</span></td>
+                  <td>Unlocks Neon Grid aesthetic block theme</td>
+                  <td>
+                    <span class="status-indicator">
+                      <span class="indicator-dot active"></span> Active
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="code-badge">MASTERBOOST</span></td>
+                  <td>Enables x2 Combo Multiplier boost</td>
+                  <td>
+                    <span class="status-indicator">
+                      <span class="indicator-dot active"></span> Active
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="code-badge">CLASSICGRID</span></td>
+                  <td>Unlocks vintage block theme</td>
+                  <td>
+                    <span class="status-indicator">
+                      <span class="indicator-dot expired"></span> Expired
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. PRIVACY POLICY VIEW -->
+    <div id="view-privacy" class="page-view">
+      <div class="privacy-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+          <h3>Policy Sections</h3>
+          <nav class="toc" aria-label="Privacy Navigation">
+            <ul class="toc-list">
+              <li><a href="#commitment" class="toc-link">Commitment</a></li>
+              <li><a href="#collection" class="toc-link">Data Collection</a></li>
+              <li><a href="#appstore" class="toc-link">App Store Reference</a></li>
+              <li><a href="#children" class="toc-link">Children's Privacy</a></li>
+              <li><a href="#purchases" class="toc-link">In-App Purchases</a></li>
+              <li><a href="#control" class="toc-link">Data Control & Demo</a></li>
+              <li><a href="#changes" class="toc-link">Policy Changes</a></li>
+              <li><a href="#contact" class="toc-link">Contact</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- Policy Content -->
+        <div class="privacy-content-area">
+          
+          <section id="commitment" class="content-card">
+            <h2><span class="section-num">1.</span> Introduction & Commitment</h2>
+            <p>Welcome to <strong>Block Master: Classic Puzzel</strong> (the "Game"), a high-quality spatial block matching mobile application. We prioritize the protection of your digital privacy. This Privacy Policy outlines what information is collected while playing the game, how it is handled, and the choices you can make regarding your data.</p>
+            <p>By installing and playing the Game, you agree to the conditions and practices detailed in this document.</p>
+            
+            <div class="alert-note">
+              <p>Block Master: Classic Puzzel operates under a "Privacy-First" model: we do not maintain private servers that store personal identifying information. Game records, levels unlocked, and sound choices are processed locally in your device's sandbox. Global features are integrated securely through Apple iCloud, Apple Game Center, Google Firebase, and Google AdMob.</p>
+            </div>
+            
+            <ul>
+              <li>We utilize <strong>Google AdMob</strong> to display non-disruptive, contextual ads. Ad tracking occurs only with your explicit consent under Apple's App Tracking Transparency framework.</li>
+              <li>We utilize <strong>Google Firebase</strong> for anonymous crash diagnostics and gameplay telemetry (e.g., measuring average combo scores or stage progression speeds).</li>
+              <li>We <strong>do not</strong> request, store, or sell any of your personally identifiable information (PII) on private servers.</li>
+              <li>We <strong>do not</strong> access location coordinates or device contact lists.</li>
+            </ul>
+          </section>
+
+          <section id="collection" class="content-card">
+            <h2><span class="section-num">2.</span> Information We Collect and How We Use It</h2>
+            <p>While playing the Game, standard systems managed by Apple Inc. and Google LLC are integrated to enable core game functions:</p>
+            
+            <h3>A. Local Game State</h3>
+            <p>Saved securely inside your device sandbox using standard storage parameters (<code>UserDefaults</code>).</p>
+            <ul>
+              <li><strong>What is stored:</strong> Personal high scores, active grid layouts (to resume session), unlocked blocks/themes index, coins collected, level achievements, sound configuration, and vibration presets.</li>
+              <li><strong>Purpose:</strong> Allows the session state to persist, letting you close and open the app without losing your score or setup.</li>
+            </ul>
+
+            <h3>B. Apple iCloud Synchronization</h3>
+            <p>Backs up session and progress data securely in your private Apple iCloud account via the <code>NSUbiquitousKeyValueStore</code> framework.</p>
+            <ul>
+              <li><strong>What is stored:</strong> A copy of your encrypted Game State settings.</li>
+              <li><strong>Purpose:</strong> Restores progress if you delete and re-install the app, and synchronizes scores/levels between your iPhone and iPad automatically. The developers cannot access your iCloud details or files.</li>
+            </ul>
+
+            <h3>C. Apple Game Center</h3>
+            <p>Transmits performance milestones to Apple leaderboards if you choose to sign in.</p>
+            <ul>
+              <li><strong>What is stored:</strong> Public Game Center nickname, achievements earned, and top score figures.</li>
+              <li><strong>Purpose:</strong> Ranks your performance on global leaderboards and tracks milestones. Controlled by your iOS Game Center preferences.</li>
+            </ul>
+
+            <h3>D. App Store Diagnostics & Telemetry</h3>
+            <p>Aggregated diagnostic metrics are sent through Apple's App Store Connect portal if you have shared analytics settings globally.</p>
+            <ul>
+              <li><strong>What is stored:</strong> Anonymous crash reports and execution speeds.</li>
+              <li><strong>Purpose:</strong> Helps identify software issues and optimization paths across various hardware devices.</li>
+            </ul>
+
+            <h3>E. Google Firebase Telemetry</h3>
+            <p>Processes performance benchmarks anonymously.</p>
+            <ul>
+              <li><strong>What is stored:</strong> Anonymous installation tokens, puzzle combo event logs, screen view counts, and exception logs.</li>
+              <li><strong>Purpose:</strong> Performance diagnostics and game balance adjustment. No identity metrics are recorded.</li>
+            </ul>
+
+            <h3>F. Google AdMob Advertising</h3>
+            <p>Processes advertisement trackers to support free gameplay.</p>
+            <ul>
+              <li><strong>What is stored:</strong> Mobile advertisement identifiers (IDFA/IDFV), hardware dimensions, and ad click events.</li>
+              <li><strong>Purpose:</strong> Measures ad campaign success. Advertisements are tailored only if you opt-in to tracking; otherwise, ads are served contextually.</li>
+            </ul>
+          </section>
+
+          <section id="appstore" class="content-card">
+            <h2><span class="section-num">3.</span> App Store Privacy Declarations</h2>
+            <p>For transparency, our App Privacy configuration inside Apple App Store Connect declares the following data usages:</p>
+            
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Data Category</th>
+                    <th>Used for Tracking?</th>
+                    <th>Linked to Identity?</th>
+                    <th>Functional Purpose</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Device ID</strong></td>
+                    <td><strong>Yes</strong> (AdMob IDFA for personalized ads, if approved)</td>
+                    <td><strong>No</strong> (Processed anonymously)</td>
+                    <td><strong>Advertising, Diagnostics</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Usage Data</strong></td>
+                    <td><strong>Yes</strong> (Ad impressions and game loops)</td>
+                    <td><strong>No</strong> (Processed anonymously)</td>
+                    <td><strong>Analytics, Advertising</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Diagnostics</strong></td>
+                    <td><strong>No</strong></td>
+                    <td><strong>No</strong></td>
+                    <td><strong>App Functionality & Bug Fixing</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="children" class="content-card">
+            <h2><span class="section-num">4.</span> Children's Privacy</h2>
+            <p><strong>Block Master: Classic Puzzel</strong> is rated <strong>4+ (Everyone)</strong> on the App Store.</p>
+            <ul>
+              <li>We <strong>do not</strong> intentionally harvest any personal identifiers from children under the age of 13 (or 16 in the European Union).</li>
+              <li>Because data is saved locally or securely in Apple's parental-controlled iCloud sandbox, the Game complies fully with the <strong>Children's Online Privacy Protection Act (COPPA)</strong> and the <strong>GDPR</strong>.</li>
+            </ul>
+          </section>
+
+          <section id="purchases" class="content-card">
+            <h2><span class="section-num">5.</span> In-App Transactions</h2>
+            <p>Theme skin purchases or score booster multipliers are processed securely using Apple's standard <strong>StoreKit 2</strong> framework.</p>
+            <p>All card processing and billing are handled directly by Apple Inc. The developers have <strong>no visibility</strong> into your credit card digits, bank account files, or name details.</p>
+          </section>
+
+          <section id="control" class="content-card" style="position: relative;">
+            <div class="wipe-anim-overlay" id="wipe-overlay">
+              <div class="wipe-text">Erasing local sandbox...</div>
+              <div class="wipe-subtext">UserDefaults reset successfully.</div>
+            </div>
+
+            <h2><span class="section-num">6.</span> Data Control and Simulator</h2>
+            <p>You have full, direct control over your sandbox game files:</p>
+            <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-secondary); font-size: 1.05rem;">
+              <li><strong>Factory Reset:</strong> Clear all local scores, coins, unlocked stages, and theme choices instantly by tapping <strong>Reset Game Data</strong> in Settings.</li>
+              <li><strong>Toggle iCloud backups:</strong> Turn off automatic cloud backups by toggling off the sync options inside your profile page or in your iOS iCloud settings.</li>
+              <li><strong>Leaderboard removal:</strong> Log out of Apple Game Center in your iOS settings to hide your rankings from leaderboards.</li>
+            </ol>
+
+            <!-- Interactive Grid Simulator widget -->
+            <div class="interactive-widget">
+              <div class="widget-title">
+                <span>🔲</span> Block Sandbox & Storage Simulator
+              </div>
+              <p style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); margin-bottom: 1rem;">
+                Click on the grid squares to simulate building custom block puzzle rows and scoring points. Toggle iCloud sync, or click <strong>Factory Reset Data</strong> to simulate erasing your local game sandbox.
+              </p>
+              
+              <div class="simulator-layout">
+                <div class="sim-grid-container">
+                  <div class="sim-board" id="sim-gameboard" aria-label="Simulator Block Grid">
+                    <!-- JS generated 8x8 grid -->
+                  </div>
+                </div>
+                
+                <div class="sim-stats-actions">
+                  <div class="sim-stats">
+                    <div class="stat-item">Simulated High Score: <span class="stat-val" id="sim-score">0</span></div>
+                    <div class="stat-item">iCloud Sync State: <span class="stat-val" id="sim-icloud" style="color: #10b981;">Active</span></div>
+                    <div class="stat-item">Sandbox Size: <span class="stat-val" id="sim-size">0 bytes</span></div>
+                  </div>
+                  
+                  <div class="sim-actions">
+                    <button class="btn-widget" id="sim-sync-btn">Toggle iCloud Sync</button>
+                    <button class="btn-widget btn-danger" id="sim-reset-btn">Factory Reset Data</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="changes" class="content-card">
+            <h2><span class="section-num">7.</span> Updates to This Privacy Policy</h2>
+            <p>This privacy declaration may change to match new game editions or iOS requirements. Any update will be added directly here, with an updated "Last Updated" metadata stamp. We encourage you to visit this section from time to time.</p>
+          </section>
+
+          <section id="contact" class="content-card">
+            <h2><span class="section-num">8.</span> Contact and Support</h2>
+            <p>For questions regarding our privacy rules, bug submissions, or support inquiries, contact the developers at:</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 1.5rem 0;">
+              <a href="mailto:theshubhamgoel@gmail.com" class="btn-widget" style="text-decoration: none; padding: 0.8rem 2rem;">theshubhamgoel@gmail.com</a>
+              <a href="mailto:themansigoel@gmail.com" class="btn-widget" style="text-decoration: none; padding: 0.8rem 2rem;">themansigoel@gmail.com</a>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Links -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="social-links-container">
+        
+        <!-- Discord -->
+        <a href="#" class="social-btn discord" aria-label="Join Discord Server">
+          <span class="social-tooltip">Discord - Coming Soon!</span>
+          <svg class="social-svg" viewBox="0 0 127.14 96.36" xmlns="http://www.w3.org/2000/svg">
+            <path d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,52.88,6.83,77.19,77.19,0,0,0,49.58,0,105.15,105.15,0,0,0,19.14,8.07C-3.41,41.74-.86,74.78,14.3,96.36a107,107,0,0,0,32.22,16.29,80.9,80.9,0,0,0,6.83-11.13,68.8,68.8,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a72.58,72.58,0,0,0,64,0c.86.69,1.75,1.37,2.66,2a68.8,68.8,0,0,1-10.85,5.18,80.9,80.9,0,0,0,6.83,11.13,107,107,0,0,0,32.22-16.29C129.24,74.78,131.79,41.74,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5.14-12.67,11.43-12.67S53.91,46,53.81,53,48.72,65.69,42.45,65.69Zm42.49,0C78.67,65.69,73.5,60,73.5,53s5.14-12.67,11.43-12.67S96.39,46,96.29,53,91.2,65.69,84.94,65.69Z"/>
+          </svg>
+        </a>
+
+        <!-- Reddit -->
+        <a href="#" class="social-btn reddit" aria-label="Reddit Subreddit">
+          <span class="social-tooltip">Reddit - Coming Soon!</span>
+          <svg class="social-svg" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path d="M17.16 8.58a2.3 2.3 0 0 0-3.86-1.7 8.7 8.7 0 0 0-4.9-1.54l1-3.16 3.26.7a1.5 1.5 0 1 0 1.5-1.48 1.5 1.5 0 0 0-1.48 1.25l-3.5-.75a.43.43 0 0 0-.5.3l-1.12 3.53a8.7 8.7 0 0 0-5 1.52A2.3 2.3 0 0 0 2.8 11a2.27 2.27 0 0 0 1 1.87 6.42 6.42 0 0 0-.08.77c0 3 3.65 5.52 8.16 5.52s8.16-2.5 8.16-5.52a6.3 6.3 0 0 0-.08-.77A2.27 2.27 0 0 0 17.16 8.58zm-11.23 3.6a1.2 1.2 0 1 1 1.2-1.2 1.2 1.2 0 0 1-1.2 1.2zm8.17 2.48a4.24 4.24 0 0 1-6.17 0 .43.43 0 1 1 .6-.6 3.38 3.38 0 0 0 5 .02.43.43 0 0 1 .6.58zm-.93-1.88a1.2 1.2 0 1 1 1.2-1.2 1.2 1.2 0 0 1-1.2 1.2z"/>
+            </g>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="#" class="social-btn instagram" aria-label="Instagram Page">
+          <span class="social-tooltip">Instagram - Coming Soon!</span>
+          <svg class="social-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+          </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a href="#" class="social-btn facebook" aria-label="Facebook Page">
+          <span class="social-tooltip">Facebook - Coming Soon!</span>
+          <svg class="social-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="footer-copy">
+        <p>&copy; 2026 Block Master: Classic Puzzel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>
